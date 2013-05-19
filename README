@@ -25,10 +25,10 @@ http://0x20.be/pam
 Installation
 ============
 
-* Copy all the files in a directory that is hosted by a webserver, e.g. apache
+* Install arp-scan
+* Copy all the files in a directory that is hosted by a webserver, e.g. apache (by default, the scripts assume you'll place this in the document root, i.e. http://localhost/associate.php)
 * Your webserver must naturally support php
 * The php-sqlite3 extension must be installed
-
 
 Configuration
 =============
@@ -37,6 +37,8 @@ Configuration
 * Make sure the configuration of where the database will be is a writable 
   directory, a database will be created there automatically using the name you
   specified.
+* Add the pamela/scanner/pamela-scanner.sh script to your crontab (as root).You should also supply arguments or edit the script to fit your environment.
+** Example: pamela-scanner.sh -i eth0 -o http://localhost/upload.php -t /var/www/html/mac_log.csv
 
 Scanner details
 ===============
